@@ -12,7 +12,7 @@ const treeData = (data, acc = "") => {
     const childrenArray = all[x]
       .map(x => x.slice(1))
       .filter(x => x.length !== 0);
-    const hasChildren = childrenArray > 0;
+    const hasChildren = childrenArray.length > 0;
     const children = hasChildren ? treeData(childrenArray, path) : [];
     return createTreeData(x, !hasChildren, path, children);
   });
